@@ -4,7 +4,7 @@ def show_header(text_title: str):
   # Layout: logo + title side by side
   col1, col2 = st.columns ([1, 6])
   with coll:
-    st. image("assets/UP logo.jpg", width=200)
+    st. image("Assets/UP_Logo.jpg", width=200)
     
   with col2:
     st. title(text_title)
