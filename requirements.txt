@@ -3,6 +3,6 @@ pandas
 numpy
 folium
 streamlit-folium
-sklearn
 matplotlib
 plotly
+scikit-learn
