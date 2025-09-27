@@ -114,20 +114,13 @@ cluster_colors = {
     "4": "#f6e523",  # yellow
 }
 
-# =============================
-# 1) Dataset preview
-# =============================
-st.markdown("## 1) Dataset")
-st.dataframe(df_f.head(100), use_container_width=True)
-st.caption(f"Showing 100 of {len(df_f):,} records.")
-csv = df_f.to_csv(index=False).encode("utf-8")
-st.download_button("Download (CSV)", data=csv, file_name="bakeries_filtered.csv", mime="text/csv")
+
 
 # =============================
-# 2) Clusters map
+# 1) Clusters map
 # =============================
 st.markdown("---")
-st.markdown("## 2) Clusters Map (K=5)")
+st.markdown("## 1) Clusters Map (K=5)")
 if df_f.empty:
     st.warning("No data for clusters map.")
 else:
@@ -151,10 +144,10 @@ else:
     st.plotly_chart(fig_clusters, use_container_width=True)
 
 # =============================
-# 3) Cluster profile + interpretation
+# 2) Cluster profile + interpretation
 # =============================
 st.markdown("---")
-st.markdown("## 3) Cluster profile (K=5) + Suggested interpretation")
+st.markdown("## 2) Cluster profile (K=5) + Suggested interpretation")
 
 def mode_or_nan(s):
     vc = s.value_counts()
@@ -186,10 +179,10 @@ else:
         """)
 
 # =============================
-# 4) Dashboards of prices and ratings
+# 3) Dashboards of prices and ratings
 # =============================
 st.markdown("---")
-st.markdown("## 4) Dashboards of prices and ratings")
+st.markdown("## 3) Dashboards of prices and ratings")
 if df_f.empty:
     st.info("No data to display.")
 else:
@@ -241,10 +234,10 @@ else:
         st.plotly_chart(fig_sc, use_container_width=True)
 
 # =============================
-# 5) Map by operational status
+# 4) Map by operational status
 # =============================
 st.markdown("---")
-st.markdown("## 5) Map by operational status")
+st.markdown("## 4) Map by operational status")
 if df_f.empty:
     st.info("No data for the operational status map.")
 else:
@@ -266,3 +259,12 @@ else:
     )
     fig_state.update_layout(mapbox_style="open-street-map", margin=dict(l=0,r=0,t=40,b=0))
     st.plotly_chart(fig_state, use_container_width=True)
+
+# =============================
+# 5) Dataset preview
+# =============================
+st.markdown("## 5) Dataset")
+st.dataframe(df_f.head(100), use_container_width=True)
+st.caption(f"Showing 100 of {len(df_f):,} records.")
+csv = df_f.to_csv(index=False).encode("utf-8")
+st.download_button("Download (CSV)", data=csv, file_name="bakeries_filtered.csv", mime="text/csv")
