@@ -120,7 +120,7 @@ cluster_colors = {
 # 1) Clusters map
 # =============================
 st.markdown("---")
-st.markdown("## 1) Clusters Map (K=5)")
+st.markdown("## 1) Cluster Map (K=5)")
 if df_f.empty:
     st.warning("No data for clusters map.")
 else:
@@ -179,10 +179,10 @@ else:
         """)
 
 # =============================
-# 3) Dashboards of prices and ratings
+# 3) Prices and ratings
 # =============================
 st.markdown("---")
-st.markdown("## 3) Dashboards of prices and ratings")
+st.markdown("## 3) Prices and ratings")
 if df_f.empty:
     st.info("No data to display.")
 else:
